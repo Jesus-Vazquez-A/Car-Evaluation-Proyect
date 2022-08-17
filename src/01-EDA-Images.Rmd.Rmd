@@ -1,0 +1,128 @@
+```{r}
+library(tidyverse)
+```
+
+```{r}
+df<-read.csv("car_evaluation.csv")
+```
+
+
+
+
+
+
+```{r}
+serieBuying<- df %>% group_by(buying) %>% count() %>% ungroup() %>% mutate(percent=n/sum(n)*100)
+serieMaint<-  df %>% group_by(maint) %>% count() %>% ungroup() %>% mutate(percent=n/sum(n)*100)
+serieDoors<-  df %>% group_by(doors) %>% count() %>% ungroup() %>% mutate(percent=n/sum(n)*100)
+seriePersons<-df %>% group_by(persons) %>% count() %>% ungroup() %>% mutate(percent=n/sum(n)*100)
+serieLugBoot<-df %>% group_by(lug_boot) %>% count() %>% ungroup() %>% mutate(percent=n/sum(n)*100)
+serieSafety<- df %>% group_by(safety) %>% count() %>% ungroup() %>% mutate(percent=n/sum(n)*100)
+serieClass<- df %>% group_by(class) %>% count() %>% ungroup() %>% mutate(percent=n/sum(n)*100)
+
+```
+
+
+
+
+
+
+```{r}
+colors=c('#77dd77','#fdfd96','#84b6f4','#fdcae1')
+```
+
+
+
+```{r}
+p1<-serieBuying %>% ggplot(aes(x=buying,y=percent,fill=buying)) + 
+  geom_bar(stat = "identity",position = "dodge") +
+  geom_text(aes(label=paste0(round(percent),"%"))) +
+  labs(x="Buying",y="Percent") +
+  theme_light() +
+  scale_fill_manual(values = colors) +
+  theme(legend.position = "none") 
+```
+
+```{r}
+p2<- serieMaint %>% ggplot(aes(x=maint,y=percent,fill=maint)) + 
+  geom_bar(stat = "identity",position = "dodge") +
+  geom_text(aes(label=paste0(round(percent),"%"))) +
+  labs(x="Maint",y="Percent") +
+  theme_light() +
+  scale_fill_manual(values = colors) +
+  theme(legend.position = "none") 
+```
+
+
+
+```{r}
+p3<- serieDoors %>% ggplot(aes(x=as.factor(doors),y=percent,fill=doors)) + 
+  geom_bar(stat = "identity",position = "dodge") +
+  geom_text(aes(label=paste0(round(percent),"%"))) +
+  labs(x="Doors",y="Percent") +
+  theme_light() +
+  scale_fill_manual(values = colors) +
+  theme(legend.position = "none") 
+```
+
+
+
+```{r}
+p4<- seriePersons %>% ggplot(aes(x=as.factor(persons),y=percent,fill=persons)) + 
+  geom_bar(stat = "identity",position = "dodge") +
+  geom_text(aes(label=paste0(round(percent),"%"))) +
+  labs(x="Persons",y="Percent") +
+  theme_light() +
+  scale_fill_manual(values = colors) +
+  theme(legend.position = "none") 
+```
+
+
+```{r}
+p5<- serieLugBoot %>% ggplot(aes(x=lug_boot,y=percent,fill=lug_boot)) + 
+  geom_bar(stat = "identity",position = "dodge") +
+  geom_text(aes(label=paste0(round(percent),"%"))) +
+  labs(x="Lug Boot",y="Percent") +
+  theme_light() +
+  scale_fill_manual(values = colors) +
+  theme(legend.position = "none") 
+```
+
+
+
+```{r}
+p6<- serieSafety %>% ggplot(aes(x=safety,y=percent,fill=safety)) + 
+  geom_bar(stat = "identity",position = "dodge") +
+  geom_text(aes(label=paste0(round(percent),"%"))) +
+  labs(x="Safety",y="Percent") +
+  theme_light() +
+  scale_fill_manual(values = colors) +
+  theme(legend.position = "none") 
+```
+
+
+
+```{r}
+p7<- serieClass %>% ggplot(aes(x=class,y=percent,fill=class)) + 
+  geom_bar(stat = "identity",position = "dodge") +
+  geom_text(aes(label=paste0(round(percent),"%"))) +
+  labs(x="Class",y="Percent") +
+  theme_light() +
+  scale_fill_manual(values = colors) +
+  theme(legend.position = "none") 
+```
+
+
+
+```{r}
+library(gridExtra)
+```
+
+```{r}
+matrix<-grid.arrange(p1,p2,p3,p4,p5,p6,p7,top="Barplot Percent")
+```
+
+```{r}
+ggsave("matrix_img.png",plot=matrix)
+```
+
