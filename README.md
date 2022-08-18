@@ -64,4 +64,10 @@ It works very similar to human logic. Use mathematical inequalities instead of q
 
 <img src = "https://concepto.de/wp-content/uploads/2018/10/bosque2-e1539893598295.jpg" >
 
+The Random Forest algorithm works in a similar way to the decision tree. While decision tree you can only use one tree. With Random Forest you can use a maximum amount of 1000 estimators.
 
+
+#### **Number of Estimators Ideal**
+
+
+![n_estimators](https://user-images.githubusercontent.com/85312561/185458090-4f320a5f-96de-4781-88e2-5106ece3ee7b.png)
