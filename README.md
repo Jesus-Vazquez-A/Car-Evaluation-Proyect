@@ -49,7 +49,7 @@ The class variable has a clear imbalance. Therefore we will use the **SMOTE** tr
 
 ### **Decesion Tree**
 
-<img src = "https://www.zigya.com/blog/wp-content/uploads/2021/01/dig10.png">
+<img src = "https://www.zigya.com/blog/wp-content/uploads/2021/01/dig10.png" heig>
 
 
 It works very similar to human logic. Use mathematical inequalities instead of questions. Since it is easier for algorithms to handle numbers than words.
@@ -62,6 +62,6 @@ It works very similar to human logic. Use mathematical inequalities instead of q
 
 ### **Random Forest**
 
-<img src = "https://concepto.de/wp-content/uploads/2018/10/bosque2-e1539893598295.jpg">
+<img src = "https://concepto.de/wp-content/uploads/2018/10/bosque2-e1539893598295.jpg"  height="600">
 
 
