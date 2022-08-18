@@ -36,3 +36,9 @@ Except for the class tag which is the variable to predict. Therefore, our model 
 ### **Approach**
 
 The class variable has a clear imbalance. Therefore we will use the **SMOTE** transformation. Which consists in creating new data similar values. According to the percentage of class that is in greater proportion.
+
+
+#### **Balanced Class**
+
+
+![balanced](https://user-images.githubusercontent.com/85312561/185450730-ef6fcb18-6e4e-4b61-a4e5-99264984ac56.png)
