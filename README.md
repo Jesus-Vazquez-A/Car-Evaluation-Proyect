@@ -117,3 +117,9 @@ It has the disadvantage of requiring a scalar setting for variables. In order to
 
 ![best_model](https://user-images.githubusercontent.com/85312561/185460722-c744a911-419c-42ca-b7c1-f180827dca87.png)
 
+
+#### **Conclusion**
+
+Although the Random Forest outperforms the other models. The Decesion Tree has a fairly **similar performance**. Also be less computationally heavy and easier to explain.
+
+Therefore I consider it as the winning model. Which I will use to develop the application.
