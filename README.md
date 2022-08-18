@@ -49,6 +49,15 @@ The class variable has a clear imbalance. Therefore we will use the **SMOTE** tr
 
 ### **Decesion Tree**
 
+#### **Model Parameters**
+
+Share several in common parameters. Except for a few:
+
+* **n_estimators**: Number of decision trees.
+* **n_jobs**: Number of working cores of the CPU.
+
+
+
 <img src = "https://www.zigya.com/blog/wp-content/uploads/2021/01/dig10.png"  height="600">
 
 
