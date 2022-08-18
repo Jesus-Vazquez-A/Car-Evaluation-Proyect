@@ -22,3 +22,9 @@
 
 
 <img src = "https://github.com/Jesus-Vazquez-A/Car-Evaluation-Proyect/blob/main/img/matrix_img.png">
+
+
+
+Almost all variables are well balanced.
+
+Except for the class tag which is the variable to predict. Therefore, our model can be biased and give the prediction preference to the class that is in greater proportion.
