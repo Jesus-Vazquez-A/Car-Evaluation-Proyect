@@ -52,7 +52,8 @@ The class variable has a clear imbalance. Therefore we will use the **SMOTE** tr
 #### **Model Parameters**
 
 
-
+* **max_depth**: Maximum depth of the tree.
+* **random_state**: Random tree state
 
 
 <img src = "https://www.zigya.com/blog/wp-content/uploads/2021/01/dig10.png"  height="600">
