@@ -133,6 +133,7 @@ Therefore I consider it as the winning model. Which I will use to develop the ap
 ![decision_tree](https://user-images.githubusercontent.com/85312561/185462062-f7bbcd92-bf38-44d4-a643-c97d502feb55.png)
 
 
+
 It is just a short form of the decision tree. Since it has more depth.
 
 
@@ -141,4 +142,4 @@ It is just a short form of the decision tree. Since it has more depth.
 ![plot_importance](https://user-images.githubusercontent.com/85312561/185462086-0ef8ad02-d315-471f-88ef-41547c0703d6.png)
 
 
-
+Finally we send the application to production. To a free server since the algorithm is not very computationally expensive. Therefore, it can make predictions with speed on a server that uses CPU. We use a free Herouku server, so that other users can access and use the application.
