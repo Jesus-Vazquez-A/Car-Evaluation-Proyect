@@ -1,2 +1,3 @@
-# Car-Evaluation-Proyect
-Through the methodology we create a robust ML model. That helps when evaluating a vehicle.
+# Car Evaluation
+
+<img src = "https://di-uploads-pod5.dealerinspire.com/autocitysd/uploads/2019/03/Used-Car-Evaluation-Checklist.jpg">
