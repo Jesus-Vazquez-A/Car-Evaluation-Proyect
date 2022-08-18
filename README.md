@@ -114,3 +114,6 @@ It has the disadvantage of requiring a scalar setting for variables. In order to
 * The model must **not only** be **adapted** to the set of training deals.
 * The algorithm must have **good performance**. For data you've never seen.
 * Must have a **high percentage** of **generalization**.
+
+![best_model](https://user-images.githubusercontent.com/85312561/185460722-c744a911-419c-42ca-b7c1-f180827dca87.png)
+
