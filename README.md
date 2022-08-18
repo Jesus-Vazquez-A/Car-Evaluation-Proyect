@@ -51,10 +51,7 @@ The class variable has a clear imbalance. Therefore we will use the **SMOTE** tr
 
 #### **Model Parameters**
 
-Share several in common parameters. Except for a few:
 
-* **n_estimators**: Number of decision trees.
-* **n_jobs**: Number of working cores of the CPU.
 
 
 
@@ -72,6 +69,12 @@ It works very similar to human logic. Use mathematical inequalities instead of q
 ### **Random Forest**
 
 
+Share several in common parameters. Except for a few:
+
+#### **Model Parameters**
+
+* **n_estimators**: Number of decision trees.
+* **n_jobs**: Number of working cores of the CPU.
 
 <img src = "https://concepto.de/wp-content/uploads/2018/10/bosque2-e1539893598295.jpg" >
 
