@@ -28,3 +28,11 @@
 Almost all variables are well balanced.
 
 Except for the class tag which is the variable to predict. Therefore, our model can be biased and give the prediction preference to the class that is in greater proportion.
+
+
+## **Proyect Summary**
+
+
+### **Approach**
+
+The class variable has a clear imbalance. Therefore we will use the **SMOTE** transformation. Which consists in creating new data similar values. According to the percentage of class that is in greater proportion.
