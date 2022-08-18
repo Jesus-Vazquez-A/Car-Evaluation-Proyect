@@ -103,3 +103,14 @@ It consists of finding the best hyperplane that fits the data set. According to 
 
 It has the disadvantage of requiring a scalar setting for variables. In order to make them comparable to each other. Since these algorithms are very sensitive.
 
+
+## **Selection of the Best Model**
+
+
+### **Criteria**
+
+
+* The model must have **balanced accuracy**. For each case.
+* The model must **not only** be **adapted** to the set of training deals.
+* The algorithm must have **good performance**. For data you've never seen.
+* Must have a **high percentage** of **generalization**.
