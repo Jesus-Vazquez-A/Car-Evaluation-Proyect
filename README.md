@@ -91,11 +91,15 @@ The Random Forest algorithm works in a similar way to the decision tree. While d
 
 ### **Support Vector Machine**
 
+#### **Model Parameters**
+
+* **kernel**: SVC core.
+* **degree**:  Degree of the polynomial.
+
 ![svc](https://user-images.githubusercontent.com/85312561/185458595-c176c1f6-d980-4777-9ba7-501723df27d8.png)
 
 
 It consists of finding the best hyperplane that fits the data set. According to the kernel provided by the user. It works quite well for relatively small data sets.
 
 It has the disadvantage of requiring a scalar setting for variables. In order to make them comparable to each other. Since these algorithms are very sensitive.
-
 
