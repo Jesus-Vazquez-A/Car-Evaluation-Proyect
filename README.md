@@ -49,4 +49,4 @@ The prediction system for a classification problem works as follows: Each Random
 
 ![metrics](https://user-images.githubusercontent.com/85312561/191783785-697f9ac8-278c-41e4-b640-9f2b15f5952e.png)
 
-
+Most of the categories are classified correctly, in addition to relentless cprecision per category, which gives us a robust model without the risk of overfitting.
