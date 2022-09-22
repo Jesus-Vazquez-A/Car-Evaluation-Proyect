@@ -28,4 +28,4 @@ Most of the classes have a good proportion, except for the variable to be predic
 
 <img src = "https://github.com/Jesus-Vazquez-A/Car-Evaluation-Proyect/blob/main/img/SMOTE.png">
 
-
+Applying the SMOTE algorithm, a perfect match between the variables to be predicted is achieved, generating new examples from the data set, allowing the algorithm to have more data to learn.
