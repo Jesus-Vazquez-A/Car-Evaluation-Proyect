@@ -1,0 +1,112 @@
+```{r warning=TRUE}
+library(dplyr)
+```
+
+
+```{r}
+url = "C:\\Users\\PC\\Desktop\\Ciencias de datos\\Proyectos\\Car Evaluation\\data\\car_evaluation.csv"
+df<-read.csv(url)
+```
+
+
+```{r}
+unique(df$buying)
+```
+
+
+```{r}
+buyingFactor<-factor(df$buying,levels = c("low","med","high","vhigh"),labels = c(0,1,2,3))
+```
+
+
+```{r}
+unique(df$maint)
+```
+
+
+```{r}
+maintFactor<-factor(df$maint,levels = c("low","med","high","vhigh"),labels = c(0,1,2,3))
+```
+
+
+We assign the highest numerical value. For the highest category.
+
+
+```{r}
+unique(df$doors)
+```
+
+
+
+```{r}
+doorsFactor<-factor(df$doors,levels = c("2","3","4","5more"),labels = c(2,3,4,5))
+```
+
+
+
+```{r}
+unique(df$persons)
+```
+
+```{r}
+personsFactor<-factor(df$persons,levels = c("2","4","more"),labels = c(2,4,5))
+```
+
+We do a similar process as the previous case.
+
+
+```{r}
+unique(df$lug_boot)
+```
+```{r}
+lugbootFactor<-factor(df$lug_boot,levels = c("small","med","big"),labels = c(0,1,2))
+```
+
+
+```{r}
+unique(df$safety)
+```
+
+```{r}
+safetyFactor<-factor(df$safety,levels = c("low","med","high"),labels = c(0,1,2))
+```
+
+
+```{r}
+unique(df$class)
+```
+```{r}
+classFactor <- factor(df$class,levels = c("unacc","acc","good","vgood"),
+                      labels = c("unacceptable","acceptable","good","very good"))
+```
+
+
+### Variable Transformation
+
+
+```{r}
+df_preprocessing<-df %>%
+  
+  
+  mutate(buying = buyingFactor,
+         maint = maintFactor,
+         doors = doorsFactor,
+         persons = personsFactor,
+         lug_boot = lugbootFactor,
+         safety = safetyFactor,
+         class = classFactor)
+         
+```
+
+
+
+## Save CSV File
+
+
+```{r}
+url = "C:\\Users\\PC\\Desktop\\Ciencias de datos\\Proyectos\\Car Evaluation\\data\\Car_Evaluation_Preprocessing.csv"
+
+
+write.csv(df_preprocessing,file=url,row.names = F)
+```
+

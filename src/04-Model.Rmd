@@ -1,0 +1,70 @@
+---
+title: "Model"
+output: html_notebook
+---
+## **Load Libraries**
+
+```{r message=FALSE, warning=FALSE}
+library(caret)
+library(dplyr)
+```
+
+
+## **Load Dataset**
+
+```{r}
+url = "C:\\Users\\PC\\Desktop\\Ciencias de datos\\Proyectos\\Car Evaluation\\data\\Car_Evaluation_Balanced.csv"
+df <- read.csv(url)
+```
+
+
+```{r}
+df<- df %>% mutate(class = as.factor(class))
+```
+
+
+## **Split Data**
+
+
+```{r}
+set.seed(2019)
+trainings.ids <- createDataPartition(df$class,p = 0.7,list = F)
+
+train_data <- df[trainings.ids,]
+test_data <- df[-trainings.ids,]
+```
+
+```{r}
+control <- trainControl(method='cv', 
+                        number=5, 
+                        search='grid')
+```
+
+
+## **Model Running**
+
+
+```{r}
+rf_gridsearch <- train(class ~ ., 
+                       data = train_data,
+                       method = 'rf',
+                       metric = 'Accuracy')
+                  
+```
+
+
+```{r}
+rf_gridsearch
+```
+```{r}
+confusionMatrix(test_data$class,predict(rf_gridsearch,test_data))
+```
+
+It offers very good metrics, it also generates very good precision per class, due to the effect of balancing the data using the SMOTE function, it caused a very positive effect on the performance of the model.
+
+
+```{r}
+url = "C:\\Users\\PC\\Desktop\\Ciencias de datos\\Proyectos\\Car Evaluation\\app\\model.RDS"
+saveRDS(rf_gridsearch,url)
+```
+

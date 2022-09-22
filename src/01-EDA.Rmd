@@ -1,0 +1,118 @@
+---
+title: "EDA"
+author: "Amado"
+date: '2022-09-22'
+output: pdf_document
+---
+
+## **Load Libraries**
+
+```{r setup, include=FALSE}
+library(tidyverse)
+library(gridExtra)
+```
+
+## **Load Dataset**
+
+```{r cars}
+df<- read.csv("C:\\Users\\PC\\Desktop\\Ciencias de datos\\Proyectos\\Car Evaluation\\data\\car_evaluation.csv")
+```
+
+
+## **Percentage Series**
+
+
+```{r pressure, echo=FALSE}
+
+serie <- function(...){
+  
+  serie <- df %>% group_by(...) %>% count() %>% ungroup() %>% mutate(percent=n/sum(n)*100)
+  
+  return(serie)
+}
+
+```
+
+
+Develop a function with the objective of calculating the percentage of each category.
+
+
+
+```{r}
+attach(df)
+
+serieBuying<- serie(buying)
+
+serieMaint<-  serie(maint)
+
+serieDoors<-   serie(doors)
+
+seriePersons<-  serie(persons)
+
+serieLugBoot<- serie(lug_boot)
+
+serieSafety<-  serie(safety)
+
+serieClass<-  serie(class)
+```
+
+
+## **Barplot**
+
+
+```{r}
+colors=c('#77dd77','#fdfd96','#84b6f4','#fdcae1')
+
+
+barplot <- function(serie,x,...){
+  
+  serie %>% ggplot(aes(x=x,y=percent,fill=x)) + 
+    geom_bar(stat = "identity",position = "dodge") +
+    geom_text(aes(label=paste0(round(percent),"%"))) +
+    theme_light() +
+    scale_fill_manual(values = colors) +
+    theme(legend.position = "none") +
+    ...
+  
+}
+```
+
+
+```{r}
+
+p1 <- barplot(serieBuying,serieBuying$buying,labs(x = "Buying",y = "Percent"))
+
+p2 <- barplot(serieMaint,serieMaint$maint,labs(x = "Maint",y = "Percent"))
+
+p3 <- barplot(serieDoors,serieDoors$doors,labs(x = "Doors",y = "Percent"))
+
+p4 <- barplot(seriePersons,seriePersons$persons,labs(x = "Persons",y = "Percent"))
+
+p5 <- barplot(serieLugBoot,serieLugBoot$lug_boot,labs(x = "Lug Boot",y = "Percent"))
+
+
+p6 <- barplot(serieSafety,serieSafety$safety,labs(x = "Safety",y = "Percent"))
+
+p7 <- barplot(serieClass,serieClass$class,labs(x = "Class",y = "Percent"))
+```
+
+
+## **Barplot Matrix**
+
+```{r}
+matrix<-grid.arrange(p1,p2,p3,p4,p5,p6,p7,top="Percentage by Category")
+```
+
+
+Most of the classes have a good proportion, except for the variable to be predicted, there is a clear disproportion between both classes. It can cause the classification model to have preference in the class with the most presence, for this reason it is convenient to make a balance adjustment.
+
+
+
+```{r}
+
+dir <- "C:\\Users\\PC\\Desktop\\Ciencias de datos\\Proyectos\\Car Evaluation\\img\\matrix_barplot.png"
+
+
+ggsave(dir,matrix)
+```
+
