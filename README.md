@@ -34,4 +34,15 @@ Applying the SMOTE algorithm, a perfect match between the variables to be predic
 
 ## **Random Forest**
 
+
+
 <img src = "https://ecosistemas.ovacen.com/wp-content/uploads/2018/01/bosque.jpg">
+
+
+I decided to apply this algorithm, because it is not a complex problem and it is based on logical decisions, in addition to not requiring a data standardization process.
+
+It works in a similar way to its smaller brother the decision tree, with the difference that you only use one tree you can use many more.
+
+The prediction system for a classification problem works as follows: Each Random Forest estimator will generate its prediction and the final value will be the most voted category, solving the decision tree overfitting problem.
+
+
