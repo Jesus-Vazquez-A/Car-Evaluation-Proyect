@@ -53,3 +53,5 @@ Most of the categories are classified correctly, in addition to relentless cprec
 
 
 Finally we save the model, with the purpose of using it to generate a web application using Shiny, which allows users to enter new data in a comfortable way and generate predictions in real time.
+
+<img src = "https://media.giphy.com/media/Xsi8TISeEbDd8cPDI2/giphy.gif">
