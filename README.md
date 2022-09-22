@@ -45,5 +45,8 @@ It works in a similar way to its smaller brother the decision tree, with the dif
 
 The prediction system for a classification problem works as follows: Each Random Forest estimator will generate its prediction and the final value will be the most voted category, solving the decision tree overfitting problem.
 
+![cm](https://user-images.githubusercontent.com/85312561/191783771-8f660ce7-8fdd-4dca-8489-44a68b5770c3.png)
+
+![metrics](https://user-images.githubusercontent.com/85312561/191783785-697f9ac8-278c-41e4-b640-9f2b15f5952e.png)
 
 
